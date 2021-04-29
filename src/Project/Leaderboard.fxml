@@ -15,7 +15,7 @@
    <children>
       <AnchorPane fx:id="pane">
          <children>
-            <Pane prefHeight="200.0" prefWidth="200.0" />
+            <Pane opacity="0.9" prefHeight="713.0" prefWidth="468.0" style="-fx-background-color: #FFFFFF;" />
             <BorderPane prefHeight="713.0" prefWidth="468.0">
                <bottom>
                   <HBox alignment="CENTER" BorderPane.alignment="CENTER">

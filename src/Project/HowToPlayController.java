@@ -5,9 +5,13 @@
  */
 package Project;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -19,6 +23,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
@@ -37,17 +43,49 @@ public class HowToPlayController implements Initializable {
     private ImageView imgView;
     @FXML
     private AnchorPane pane;
+    @FXML
+    private Button preBtn;
+    @FXML
+    private Button nextBtn;
+    private int page;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        page = 1;
+        try {
+            // TODO
+            imgView.setImage(new Image(new File("Image/HowToPlay/page1.png").toURI().toURL().toString()));
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(HowToPlayController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        preBtn.setVisible(false);
     }
 
     @FXML
-    private void previousBtnPressed(ActionEvent event) {
+    private void previousBtnPressed(ActionEvent event) throws MalformedURLException, MalformedURLException {
+        nextBtn.setVisible(true);
+        if (page > 1) {
+            page--;
+            imgView.setImage(new Image(new File("Image/HowToPlay/page" + Integer.toString(page) + ".png").toURI().toURL().toString()));
+        }
+        if (page == 1) {
+            preBtn.setVisible(false);
+        }
+    }
+
+    @FXML
+    private void nextBtnPressed(ActionEvent event) throws MalformedURLException {
+        preBtn.setVisible(true);
+        if (page < 7) {
+            page++;
+            imgView.setImage(new Image(new File("Image/HowToPlay/page" + Integer.toString(page) + ".png").toURI().toURL().toString()));
+        }
+        if (page == 7) {
+            nextBtn.setVisible(false);
+        }
     }
 
     @FXML
@@ -68,10 +106,6 @@ public class HowToPlayController implements Initializable {
             }
         });
         timeline.play();
-    }
-
-    @FXML
-    private void nextBtnPressed(ActionEvent event) {
     }
 
 }
