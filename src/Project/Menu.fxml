@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane id="AnchorPane" fx:id="stackPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.MenuController">
+   <children>
+      <Pane style="-fx-background-color: #FFD376;" />
+      <AnchorPane fx:id="MenuPane" layoutY="14.0" prefHeight="713.0" prefWidth="468.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <FlowPane alignment="TOP_CENTER" columnHalignment="CENTER" layoutY="247.0" prefHeight="678.0" prefWidth="468.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox alignment="CENTER" fillWidth="false" spacing="30.0">
+                     <children>
+                        <ImageView fx:id="imgViewMenuLogo" fitHeight="279.0" fitWidth="334.0" pickOnBounds="true" preserveRatio="true">
+                           <viewport>
+                              <Rectangle2D />
+                           </viewport>
+                        </ImageView>
+                        <Button fx:id="playBtn" mnemonicParsing="false" onAction="#playBtnPressed" prefHeight="70.0" prefWidth="250.0" text="Play" />
+                        <Button fx:id="howToPlayBtn" mnemonicParsing="false" onAction="#howToPlayBtnPressed" prefHeight="70.0" prefWidth="250.0" text="How To Play" />
+                        <Button fx:id="leaderboardBtn" mnemonicParsing="false" onAction="#leaderboardBtnPressed" prefHeight="70.0" prefWidth="250.0" text="Leaderboard" />
+                        <Button fx:id="quitBtn" mnemonicParsing="false" onAction="#quitBtnPressed" prefHeight="70.0" prefWidth="250.0" text="Quit" />
+                     </children>
+                     <FlowPane.margin>
+                        <Insets />
+                     </FlowPane.margin>
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </FlowPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
