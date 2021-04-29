@@ -539,7 +539,9 @@ public class INGameController implements Initializable {
                 if (startIndex != 0) {
                     leftBtn.setVisible(true);
                 }
-                rightBtn.setVisible(true);
+                if (startIndex + 7 < cardInHand.size() - 1) {
+                    rightBtn.setVisible(true);
+                }
             }
         } else {
             handImgView1.setImage(new Image(new File("Image/Card/Back.png").toURI().toURL().toString()));
